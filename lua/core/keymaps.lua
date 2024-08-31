@@ -15,5 +15,11 @@ keymap.set("n", "<leader>e", ":NvimTreeToggle<CR>")
 -- 切换Buffer
 keymap.set("n", "<leader>l", ":bnext<CR>")
 keymap.set("n", "<leader>h", ":bprevious<CR>")
+-- CMake
+keymap.set("n", "<leader>g", ":CMakeGenerate<CR>", { noremap = true, silent = true })
+keymap.set("n", "<leader>b", ":CMakeBuild<CR>", { noremap = true, silent = true })
+keymap.set("n", "<leader>rn", ":CMakeRun", { noremap = true, silent = true })
+keymap.set("n", "<leader>c", ":CMakeClean<CR>", { noremap = true, silent = true })
+
 
 

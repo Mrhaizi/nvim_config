@@ -56,6 +56,8 @@ return require('packer').startup(function(use)
     'nvim-telescope/telescope.nvim',  -- 文件检索
     requires = { {'nvim-lua/plenary.nvim'} }
   }
+  use "tpope/vim-commentary"
+  use "cdelledonne/vim-cmake"
 
  if packer_bootstrap then
     require('packer').sync()

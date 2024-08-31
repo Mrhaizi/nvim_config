@@ -180,6 +180,16 @@ _G.packer_plugins = {
     path = "/home/myq/.local/share/nvim/site/pack/packer/start/tokyonight.nvim",
     url = "https://github.com/folke/tokyonight.nvim"
   },
+  ["vim-cmake"] = {
+    loaded = true,
+    path = "/home/myq/.local/share/nvim/site/pack/packer/start/vim-cmake",
+    url = "https://github.com/cdelledonne/vim-cmake"
+  },
+  ["vim-commentary"] = {
+    loaded = true,
+    path = "/home/myq/.local/share/nvim/site/pack/packer/start/vim-commentary",
+    url = "https://github.com/tpope/vim-commentary"
+  },
   ["vim-tmux-navigator"] = {
     loaded = true,
     path = "/home/myq/.local/share/nvim/site/pack/packer/start/vim-tmux-navigator",
