@@ -20,6 +20,7 @@ keymap.set("n", "<leader>g", ":CMakeGenerate<CR>", { noremap = true, silent = tr
 keymap.set("n", "<leader>b", ":CMakeBuild<CR>", { noremap = true, silent = true })
 keymap.set("n", "<leader>rn", ":CMakeRun", { noremap = true, silent = true })
 keymap.set("n", "<leader>c", ":CMakeClean<CR>", { noremap = true, silent = true })
-
+-- 保存
+keymap.set("n", "<leader>s",  ":w<CR>")
 
 
