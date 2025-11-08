@@ -89,6 +89,16 @@ _G.packer_plugins = {
     path = "/home/myq/.local/share/nvim/site/pack/packer/start/bufferline.nvim",
     url = "https://github.com/akinsho/bufferline.nvim"
   },
+  ["cmp-buffer"] = {
+    loaded = true,
+    path = "/home/myq/.local/share/nvim/site/pack/packer/start/cmp-buffer",
+    url = "https://github.com/hrsh7th/cmp-buffer"
+  },
+  ["cmp-cmdline"] = {
+    loaded = true,
+    path = "/home/myq/.local/share/nvim/site/pack/packer/start/cmp-cmdline",
+    url = "https://github.com/hrsh7th/cmp-cmdline"
+  },
   ["cmp-nvim-lsp"] = {
     loaded = true,
     path = "/home/myq/.local/share/nvim/site/pack/packer/start/cmp-nvim-lsp",
@@ -139,6 +149,11 @@ _G.packer_plugins = {
     path = "/home/myq/.local/share/nvim/site/pack/packer/start/nvim-cmp",
     url = "https://github.com/hrsh7th/nvim-cmp"
   },
+  ["nvim-dap"] = {
+    loaded = true,
+    path = "/home/myq/.local/share/nvim/site/pack/packer/start/nvim-dap",
+    url = "https://github.com/mfussenegger/nvim-dap"
+  },
   ["nvim-lspconfig"] = {
     loaded = true,
     path = "/home/myq/.local/share/nvim/site/pack/packer/start/nvim-lspconfig",
@@ -179,6 +194,26 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/myq/.local/share/nvim/site/pack/packer/start/tokyonight.nvim",
     url = "https://github.com/folke/tokyonight.nvim"
+  },
+  ["vim-Annotations"] = {
+    loaded = true,
+    path = "/home/myq/.local/share/nvim/site/pack/packer/start/vim-Annotations",
+    url = "https://github.com/pwentz/vim-Annotations"
+  },
+  ["vim-abolish"] = {
+    loaded = true,
+    path = "/home/myq/.local/share/nvim/site/pack/packer/start/vim-abolish",
+    url = "https://github.com/tpope/vim-abolish"
+  },
+  ["vim-cmake"] = {
+    loaded = true,
+    path = "/home/myq/.local/share/nvim/site/pack/packer/start/vim-cmake",
+    url = "https://github.com/cdelledonne/vim-cmake"
+  },
+  ["vim-commentary"] = {
+    loaded = true,
+    path = "/home/myq/.local/share/nvim/site/pack/packer/start/vim-commentary",
+    url = "https://github.com/tpope/vim-commentary"
   },
   ["vim-tmux-navigator"] = {
     loaded = true,
