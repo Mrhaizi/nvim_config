@@ -51,24 +51,16 @@ require("lspconfig").lua_ls.setup {
     },
   },
 }
-<<<<<<< HEAD
 
 -- C++ (clangd) 语言服务器配置
 require("lspconfig").clangd.setup {
   capabilities = capabilities,
   on_attach = on_attach,
   cmd = { "clangd", "--query-driver=/usr/bin/clangd" },  -- 替换为你的编译器路径
-=======
--- C++ (clangd) 语言服务器配置
-require("lspconfig").clangd.setup {
-  capabilities = capabilities,
-  cmd = { "clangd" },
->>>>>>> origin/main
   filetypes = { "c", "cpp", "objc", "objcpp" },
   root_dir = require('lspconfig').util.root_pattern("compile_commands.json", "compile_flags.txt", ".git"),
   settings = {
     clangd = {
-<<<<<<< HEAD
       fallbackFlags = { "-std=c++20" }
     }
   }
@@ -120,9 +112,3 @@ vim.api.nvim_create_autocmd("BufWritePre", {
     vim.lsp.buf.format({ async = false })
   end,
 })
-=======
-      fallbackFlags = { "-std=c++17" }
-    }
-  }
-}
->>>>>>> origin/main
