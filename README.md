@@ -31,7 +31,7 @@
   - NvimTree 文件树、Telescope 文件/内容/帮助检索
 - 语法与语义
   - Treesitter 语法高亮与缩进
-  - LSP：`lua_ls`、`clangd`、`cmake` 等（Mason 管理）
+  - LSP：`lua_ls`、`clangd`、`cmake`、`gopls`（Go）等（Mason 管理）
 - 自动补全
   - nvim-cmp + cmp-nvim-lsp + LuaSnip + Friendly Snippets + path/buffer 源
   - nvim-autopairs 与补全联动补括号
@@ -76,7 +76,7 @@
 相关配置：`lua/core/options.lua`、`lua/plugins/lualine.lua`、`lua/plugins/bufferline.lua`、`lua/plugins/nvim-tree.lua`。
 
 ## LSP 与补全
-- Mason 自动管理与安装 LSP：`lua_ls`、`clangd`、`cmake`
+- Mason 自动管理与安装 LSP：`lua_ls`、`clangd`、`cmake`、`gopls`
 - 绑定常用 LSP 快捷键：`gd`/`gD`/`gr`/`gk` 等
 - nvim-cmp 映射：`<CR>` 确认、`<Tab>`/`<S-Tab>` 选择、`<C-b>/<C-f>` 文档滚动、`<C-e>` 取消
 - Autopairs 与补全联动，自动补全括号
@@ -119,3 +119,10 @@
 - LSP/工具：`:Mason`
 - Treesitter：`:TSUpdate`
 - CMake：`:CMakeGenerate`、`:CMakeBuild`、`:CMakeRun`、`:CMakeClean`
+## Go 支持
+- 语法高亮：已启用 Treesitter Go 解析器（go/gomod/gowork）
+- 语言服务：`gopls`（已纳入 Mason 安装清单）
+- 自动导入与格式化：保存时自动 organize imports + `gofumpt` 格式化
+- 使用提示：
+  - 打开 Go 文件后，执行 `:Mason` 安装 `gopls`（若未安装）
+  - 正常写码，补全走 nvim-cmp + gopls；保存时自动整理导入、格式化

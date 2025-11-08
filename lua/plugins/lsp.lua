@@ -13,6 +13,7 @@ require("mason-lspconfig").setup({
     "lua_ls",
     "clangd",
     "cmake",
+    "gopls",
   },
 })
 
@@ -71,3 +72,43 @@ require("lspconfig").cmake.setup {
   on_attach = on_attach,
 }
 
+-- Go (gopls) 语言服务器配置
+require("lspconfig").gopls.setup {
+  capabilities = capabilities,
+  on_attach = on_attach,
+  cmd = { "gopls" },
+  filetypes = { "go", "gomod", "gowork", "gotmpl" },
+  root_dir = require('lspconfig').util.root_pattern("go.work", "go.mod", ".git"),
+  settings = {
+    gopls = {
+      usePlaceholders = true,
+      completeUnimported = true,
+      analyses = {
+        unusedparams = true,
+        shadow = true,
+      },
+      staticcheck = true,
+      gofumpt = true,
+    }
+  }
+}
+
+-- Go: 保存前自动 organize imports + 格式化
+vim.api.nvim_create_autocmd("BufWritePre", {
+  pattern = "*.go",
+  callback = function()
+    local params = vim.lsp.util.make_range_params()
+    params.context = { only = { "source.organizeImports" } }
+    local result = vim.lsp.buf_request_sync(0, "textDocument/codeAction", params, 1000)
+    for _, res in pairs(result or {}) do
+      for _, r in pairs(res.result or {}) do
+        if r.edit then
+          vim.lsp.util.apply_workspace_edit(r.edit, "utf-16")
+        elseif r.command then
+          vim.lsp.buf.execute_command(r.command)
+        end
+      end
+    end
+    vim.lsp.buf.format({ async = false })
+  end,
+})
