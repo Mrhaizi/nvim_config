@@ -1,3 +1,4 @@
+vim.o.timeoutlen = 200
 require("plugins.plugins-setup")
 require("core.options")
 require("core.keymaps")

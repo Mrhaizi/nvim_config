@@ -42,14 +42,15 @@
 - 其他
   - vim-tmux-navigator 跨 pane 导航、注释（Comment.nvim / vim-commentary）、文本替换增强（vim-abolish）
 
-## 常用快捷键（部分）
-- 领导键：`<Space>`
-- 模式与窗口
+## 常用快捷键（完整）
+- 基础
+  - 领导键：`<Space>`
   - 插入 → 正常：`jk`
+- 窗口与 Buffer
   - 垂直分屏：`<leader>sv`；水平分屏：`<leader>sh`
-- 文件树与 Buffer
-  - 切换 NvimTree：`<leader>e`
+  - 切换文件树：`<leader>e`
   - 下/上一个 Buffer：`<leader>l` / `<leader>h`
+  - 关闭当前 Buffer：`<leader>q`；强制关闭：`<leader>Q`
 - 搜索（Telescope）
   - 查找文件：`<leader>ff`
   - 全文检索（需 ripgrep）：`<leader>fg`
@@ -58,13 +59,15 @@
 - CMake（vim-cmake）
   - 生成：`<leader>g` → `:CMakeGenerate`
   - 编译：`<leader>b` → `:CMakeBuild`
-  - 运行（自动选择默认目标）：`<leader>rn`
-  - 一键生成+编译+运行：`<leader>rr`（若未生成，会自动用外部 cmake 先生成）
+  - 运行（自动选择目标）：`<leader>rn`
+  - 一键 生成+编译+运行：`<leader>rr`
   - 清理：`<leader>c` → `:CMakeClean`
-- 其他
+- 实用
   - 取消高亮：`<leader>dh`
   - 保存：`<leader>s`
   - 打开终端：`<leader>te`
+  - 退出全部：`<leader>qq`（含清理 CMake 窗口，保存询问）
+  - 保存并退出全部：`<leader>wq`；强制退出全部：`<leader>q!`
 
 提示：更多具体映射可见 `lua/core/keymaps.lua`。
 
@@ -77,9 +80,11 @@
 
 ## LSP 与补全
 - Mason 自动管理与安装 LSP：`lua_ls`、`clangd`、`cmake`、`gopls`
-- 绑定常用 LSP 快捷键：`gd`/`gD`/`gr`/`gk` 等
-- nvim-cmp 映射：`<CR>` 确认、`<Tab>`/`<S-Tab>` 选择、`<C-b>/<C-f>` 文档滚动、`<C-e>` 取消
-- Autopairs 与补全联动，自动补全括号
+- LSP 常用快捷键（在文件缓冲区内）：
+  - 跳转到定义：`gd`；声明：`gD`；引用：`gr`；悬浮文档：`gk`
+- nvim-cmp 补全键位：
+  - 确认：`<CR>`；下/上项：`<Tab>` / `<S-Tab>`；取消：`<C-e>`；文档滚动：`<C-b>` / `<C-f>`
+- Autopairs 与补全联动：确认补全时自动补括号
 
 相关配置：`lua/plugins/lsp.lua`、`lua/plugins/cmp.lua`、`lua/plugins/autopairs.lua`。
 

@@ -15,6 +15,15 @@ keymap.set("n", "<leader>e", ":NvimTreeToggle<CR>")
 -- 切换Buffer
 keymap.set("n", "<leader>l", ":bnext<CR>")
 keymap.set("n", "<leader>h", ":bprevious<CR>")
+-- 退出快捷键（清理 CMake 窗口并退出全部）
+keymap.set("n", "<leader>qq", function()
+  pcall(vim.cmd, "CMakeStop")
+  pcall(vim.cmd, "CMakeCloseOverlay")
+  pcall(vim.cmd, "CMakeClose")
+  vim.cmd("confirm qall")
+end, { noremap = true, silent = true, desc = "Quit all (clean)" })
+keymap.set("n", "<leader>q!", ":qa!<CR>", { noremap = true, silent = true, desc = "Force quit all" })
+keymap.set("n", "<leader>wq", ":wqa<CR>", { noremap = true, silent = true, desc = "Write and quit all" })
 -- CMake
 keymap.set("n", "<leader>g", ":CMakeGenerate<CR>", { noremap = true, silent = true })
 keymap.set("n", "<leader>b", ":CMakeBuild<CR>", { noremap = true, silent = true })
@@ -39,4 +48,5 @@ keymap.set("n", "<leader>te", ":terminal<CR>")
 
 vim.keymap.set('n', '<leader>q', ':bd<CR>', { desc = '关闭当前 buffer' })
 vim.keymap.set('n', '<leader>Q', ':bd!<CR>', { desc = '强制关闭当前 buffer' })
+
 
