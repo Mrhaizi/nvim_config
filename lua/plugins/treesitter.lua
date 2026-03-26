@@ -1,10 +1,31 @@
-require'nvim-treesitter.configs'.setup {
-  ensure_installed = { "vim", "bash", "c", "cpp", "javascript", "json", "lua", "python", "typescript", "tsx", "css", "rust", "markdown", "markdown_inline", "go", "gomod", "gowork" }, 
-  highlight = { 
-    enable = true, 
+require("nvim-treesitter.configs").setup({
+  ensure_installed = {
+    "bash",
+    "c",
+    "cmake",
+    "cpp",
+    "css",
+    "go",
+    "gomod",
+    "gowork",
+    "javascript",
+    "json",
+    "lua",
+    "markdown",
+    "markdown_inline",
+    "python",
+    "rust",
+    "toml",
+    "tsx",
+    "typescript",
+    "vim",
+    "vimdoc",
   },
-  indent = { 
-    enable = true, 
-  }
-}
-
+  auto_install = true,
+  highlight = {
+    enable = true,
+  },
+  indent = {
+    enable = true,
+  },
+})

@@ -7,8 +7,8 @@ keymap.set("i", "jk", "<ESC>")
 keymap.set("v", "J", ":m '>+1<CR>gv=gv")
 keymap.set("v", "K", ":m '<-2<CR>gv=gv")
 -- 正常模式
-keymap.set("n", "<leader>sv", "<C-w>v") -- 水平新增窗口 
-keymap.set("n", "<leader>sh", "<C-w>s") -- 垂直新增窗口
+keymap.set("n", "<leader>sv", "<C-w>v") -- 垂直分屏
+keymap.set("n", "<leader>sh", "<C-w>s") -- 水平分屏
 
 --插件
 keymap.set("n", "<leader>e", ":NvimTreeToggle<CR>")
@@ -45,8 +45,9 @@ keymap.set("n", "<leader>dh", ":nohl<CR>")
 keymap.set("n", "<leader>s",  ":w<CR>")
 --开启终端
 keymap.set("n", "<leader>te", ":terminal<CR>")
+keymap.set("n", "<leader>lm", ":Mason<CR>", { noremap = true, silent = true, desc = "Open Mason" })
+keymap.set("n", "<leader>li", ":LspInfo<CR>", { noremap = true, silent = true, desc = "Open LSP info" })
 
 vim.keymap.set('n', '<leader>q', ':bd<CR>', { desc = '关闭当前 buffer' })
 vim.keymap.set('n', '<leader>Q', ':bd!<CR>', { desc = '强制关闭当前 buffer' })
-
 
